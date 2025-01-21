@@ -1,0 +1,15 @@
+{
+  "name": "api-35",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon index.js"
+  },
+  "author": "shivraj tharu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.0.1"
+  }
+}
