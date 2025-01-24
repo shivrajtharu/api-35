@@ -1,12 +1,9 @@
 // http
 const http = require("http");
+const app = require("./src/config/express.config")
 
 // server
-const httpServer = http.createServer((req, res) =>{
-    // req is always incoming
-    // res to send the response to api call
-    res.end("Hello world")
-});
+const httpServer = http.createServer(app);
 
 // host
 // 0 - 1024  => well known ports
