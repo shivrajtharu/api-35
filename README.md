@@ -93,3 +93,42 @@
 ## Router are two types:
 1) global router
 2) module router
+
+- CRUD
+- Auth
+- user
+- prodeuct
+- order
+- brand 
+- category
+- transaction
+- review
+- chat
+
+## Modules
+### Auth
+- Register
+     - User Register => otp based/link
+- Activate
+     - via otp, or via link
+- Login
+     - 2FA
+       - Username password
+       - otp verify
+- User own Profile
+     - get profile
+- Forgot password
+     - verify link send
+- Reset password
+     - verify link
+     - set password
+- Logout (optional)
+     - logout api
+- Refresh
+     - renew token api
+
+### Most popular Packages used for validation
+- yup
+- joi
+- zod
+- ajv
