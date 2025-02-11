@@ -1,4 +1,5 @@
 const express = require("express");
+require("./db.config");
 const router = require("./router.config");
 const { MulterError } = require("multer");
 
@@ -24,7 +25,7 @@ app.use((req, res, next) => {
 
 // error handling middleware
 app.use((error, req, res, next) => {
-  // console.log({ error });
+  // console.log(error);
   let code = error.code || 500;
   let msg = error.message || "Internal Server Error";
   let status = error.status || "SERVER_ERROR";
@@ -44,6 +45,20 @@ if (error instanceof MulterError){
   if (error.code === "LIMIT_FILE_SIZE") {
     detail = {
       [error.field]: "File size is too large"
+    }
+  }
+}
+
+if (error.name === "MongooseError"){
+  code = 400;
+  status = "VALIDATION_FAILED";
+  
+  if (+error.cause.code === 11000) {
+    // unique validation failed
+    msg = "Unique Validation Failed";
+    let failedField = Object.keys(error.cause.keyPattern).pop();
+    detail = {
+      [failedField]: error.message,
     }
   }
 }

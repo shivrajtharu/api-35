@@ -8,7 +8,7 @@ const uploader = require("../../middlewares/multipart-handle.middleware");
 // uploader().single(fieldname) => if content-type is multipart/form-data and the data has single file upload
 // uploader().array(fieldname, limit) => if content-type is multipart/form-data and the data has multiple file upload
 authRouter.post('/register', uploader().single('image'), bodyValidator(RegisterUserDTO), authCtrl.registerUser,)
-authRouter.post('/activate', authCtrl.activateUser)
+authRouter.get('/activate/:token', authCtrl.activateUser)
 
 
 module.exports = authRouter;
