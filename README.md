@@ -287,7 +287,7 @@ config: {
 ### Features data
 - users
    - fullName, email, password, address, gender, role, status
-- banners/ slider
+- banners/ slider (SQL)
 - brands
 - categories
 - products

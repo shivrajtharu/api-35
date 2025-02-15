@@ -16,6 +16,7 @@ const SMTPConfig = {
 
 const appConfig = {
     frontend_url: process.env.FRONTEND_URL,
+    jwt_secret: process.env.JWT_SECRET
 }
 
 const dbConfig = {
