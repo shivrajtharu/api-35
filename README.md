@@ -289,6 +289,7 @@ config: {
    - fullName, email, password, address, gender, role, status
 - banners/ slider (SQL)
 - brands
+   - title, slug, status, logo, (_id, created_at, updated_at, created_by, updated_by)
 - categories
 - products
 - orders
