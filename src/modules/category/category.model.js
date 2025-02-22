@@ -8,11 +8,11 @@ const CategorySchema = new mongoose.Schema(
         min: 2,
         max: 100,
         required: true,
-        unique: true,
+        unique: [true, "Category title should be unique"],
     },
     slug: {
         type: String,
-        unique: true,
+        unique: [true, "Category title should be unique"],
         required: true,
       },
       status: {

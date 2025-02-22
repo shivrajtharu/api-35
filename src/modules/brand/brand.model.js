@@ -8,12 +8,12 @@ const BrandSchema = new mongoose.Schema(
       type: String,
       min: 2,
       max: 100,
-      unique: true,
+      unique: [true, "Brand title should be unique"],
       required: true,
     },
     slug: {
       type: String,
-      unique: true,
+      unique: [true, "Brand title should be unique"],
       required: true,
     },
     status: {

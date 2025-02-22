@@ -7,12 +7,12 @@ const OrderSchema = new mongoose.Schema(
             type: String,
             min: 2,
             max: 100,
-            required: true,
+            required: [true, "Order title should be unique"],
             unique: true,
         },
         slug: {
             type: String,
-            unique: true,
+            unique: [true, "Order title should be unique"],
             required: true,
           },
           status: {

@@ -49,7 +49,7 @@ if (error instanceof MulterError){
   }
 }
 
-if (error.name === "MongooseError"){
+if (error.name === "MongooseError" || error.name === "MongoServerError"){
   code = 400;
   status = "VALIDATION_FAILED";
   
